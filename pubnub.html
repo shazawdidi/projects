@@ -1,0 +1,25 @@
+
+<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.7.js"></script>
+
+<!-- Instantiate PubNub -->
+<script type="text/javascript">
+
+    var pubnubDemo = new PubNub({
+        publishKey: 'pub-c-bc56efdd-1c0a-4524-8fc5-6a79119b6658',
+        subscribeKey: 'sub-c-3b8adb6e-973c-11e8-b7e1-625ee96eadaa'
+    });
+
+    // Publish a simple message to the demo_tutorial channel
+    var i = 1;
+
+    function fun(){
+        pubnubDemo.publish({
+        message: {
+            "name" : "Ameen" + ++i
+        },
+        channel: 'ride_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo0OSwiZXhwIjoxNTcxMDY2MDkwLCJpc3MiOiJsb2NhbGhvc3QiLCJpYXQiOjE1NzEwNjI0OTB9.J4msSoIEwr6g56-GT14-TpMYy0extJEVbnAJQq6rMA4'
+    });
+    }
+</script>
+
+<input type="button" value="Click" onclick="fun()">
